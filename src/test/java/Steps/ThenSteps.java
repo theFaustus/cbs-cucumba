@@ -33,11 +33,19 @@ public class ThenSteps {
 
     @Then("^I see movies tab$")
     public void iSeeMoviesTab() {
-        WebElement loggedInMessage = Util.getDriver().findElement(By.xpath("//div[contains(text(),'MOVIES')]"));
-        String moviesTabText = loggedInMessage.getText();
+        WebElement moviesMessage = Util.getDriver().findElement(By.xpath("//div[contains(text(),'MOVIES')]"));
+        String moviesTabText = moviesMessage.getText();
 
         assertEquals("MOVIES", moviesTabText);
 
 
+    }
+
+    @Then("^I see successful registration message$")
+    public void iSeeSuccessfulRegistrationMessage() {
+        WebElement registeredMessage = Util.getDriver().findElement(By.xpath("//span[contains(text(),'Your registration is successful. Please login!')]"));
+        String registeredText = registeredMessage.getText();
+
+        assertEquals("Your registration is successful. Please login!", registeredText);
     }
 }

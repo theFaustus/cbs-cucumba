@@ -40,4 +40,13 @@ public class GivenSteps {
     public void iAmOnTheHomePage() {
         Util.getDriver().get("http://localhost:4200/auth/login");
     }
+
+    @Given("^I am on the register page$")
+    public void iAmOnTheRegisterPage() {
+        Util.getDriver().get("http://localhost:4200/home");
+
+        WebElement signUp = Util.getDriver().
+                findElement(By.xpath("//span[contains(text(),'Sign up')]"));
+        signUp.click();
+    }
 }

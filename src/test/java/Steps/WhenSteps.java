@@ -39,4 +39,32 @@ public class WhenSteps {
                 Util.getDriver().findElement(By.xpath("//span[contains(text(),'Board')]"));
         board.click();
     }
+
+    @When("^I complete all the fields of the register form$")
+    public void iCompleteAllTheFieldsOfTheRegisterForm() {
+        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-42']"));
+        username.sendKeys("drake");
+
+        WebElement email = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-43']"));
+        email.sendKeys("drake@gmail.com");
+
+        WebElement firstName = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-44']"));
+        firstName.sendKeys("drake");
+
+        WebElement lastName = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-45']"));
+        lastName.sendKeys("doe");
+
+        WebElement telephoneNumber = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-46']"));
+        telephoneNumber.sendKeys("0(69)-373-373");
+
+        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-47']"));
+        password.sendKeys("123abcABC*");
+    }
+
+    @And("^I click the sign up button$")
+    public void iClickTheSignUpButton() {
+        WebElement signUp =
+                Util.getDriver().findElement(By.xpath("//span[contains(text(),'Register')]"));
+        signUp.click();
+    }
 }
