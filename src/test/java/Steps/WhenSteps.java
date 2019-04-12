@@ -32,4 +32,11 @@ public class WhenSteps {
         WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-1']"));
         password.sendKeys("admin");
     }
+
+    @When("^I click on the board$")
+    public void iClickOnTheBoard() {
+        WebElement board =
+                Util.getDriver().findElement(By.xpath("//span[contains(text(),'Board')]"));
+        board.click();
+    }
 }

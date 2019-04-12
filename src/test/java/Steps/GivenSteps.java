@@ -15,6 +15,29 @@ public class GivenSteps {
         WebElement login = Util.getDriver().
                 findElement(By.xpath("//a[@id='login']"));
         login.click();
+    }
 
+    @Given("^I am logged in$")
+    public void iAmLoggedIn() {
+        Util.getDriver().get("http://localhost:4200/home");
+
+        WebElement login = Util.getDriver().
+                findElement(By.xpath("//a[@id='login']"));
+        login.click();
+
+        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-0']"));
+        username.sendKeys("hector");
+
+        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-1']"));
+        password.sendKeys("admin");
+
+        WebElement loginButton =
+                Util.getDriver().findElement(By.xpath("//button[@class='mat-raised-button mat-primary _mat-animation-noopable']"));
+        loginButton.click();
+    }
+
+    @Given("^I am on the home page$")
+    public void iAmOnTheHomePage() {
+        Util.getDriver().get("http://localhost:4200/auth/login");
     }
 }

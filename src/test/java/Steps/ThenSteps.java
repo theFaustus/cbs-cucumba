@@ -30,4 +30,14 @@ public class ThenSteps {
         assertEquals("http://localhost:4200/auth/login", currentURL);
         assertEquals("Logged in as ROLE_ADMIN.", messageText);
     }
+
+    @Then("^I see movies tab$")
+    public void iSeeMoviesTab() {
+        WebElement loggedInMessage = Util.getDriver().findElement(By.xpath("//div[contains(text(),'MOVIES')]"));
+        String moviesTabText = loggedInMessage.getText();
+
+        assertEquals("MOVIES", moviesTabText);
+
+
+    }
 }
