@@ -9,7 +9,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class ThenSteps {
 
-    @Then("^the login form is successfully submitted$")
+    @Then("^I am logged in as an user$")
     public void theLoginFormIsSuccessfullySubmitted() {
         WebElement loggedInMessage = Util.getDriver().findElement(By.xpath("//span[contains(text(),'Logged in as ROLE_USER.')]"));
 
@@ -18,5 +18,16 @@ public class ThenSteps {
 
         assertEquals("http://localhost:4200/auth/login", currentURL);
         assertEquals("Logged in as ROLE_USER.", messageText);
+    }
+
+    @Then("^I am logged in as an admin$")
+    public void iAmLoggedInAsAnAdmin() {
+        WebElement loggedInMessage = Util.getDriver().findElement(By.xpath("//span[contains(text(),'Logged in as ROLE_ADMIN.')]"));
+
+        String messageText = loggedInMessage.getText();
+        String currentURL = Util.getDriver().getCurrentUrl();
+
+        assertEquals("http://localhost:4200/auth/login", currentURL);
+        assertEquals("Logged in as ROLE_ADMIN.", messageText);
     }
 }

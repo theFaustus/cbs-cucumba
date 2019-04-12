@@ -23,4 +23,13 @@ public class WhenSteps {
                 Util.getDriver().findElement(By.xpath("//button[@class='mat-raised-button mat-primary _mat-animation-noopable']"));
         login.click();
     }
+
+    @When("^I complete all the fields with admin credentials of the login form$")
+    public void iCompleteAllTheFieldsWithAdminCredentialsOfTheLoginForm() {
+        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-0']"));
+        username.sendKeys("admin");
+
+        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-1']"));
+        password.sendKeys("admin");
+    }
 }

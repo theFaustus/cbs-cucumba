@@ -7,6 +7,6 @@ Feature: User Login Page
     Given I am on the login page
     When I complete all the fields of the login form
     And I click the login button
-    Then the login form is successfully submitted
+    Then I am logged in as an user
 
 
