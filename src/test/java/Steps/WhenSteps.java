@@ -42,22 +42,22 @@ public class WhenSteps {
 
     @When("^I complete all the fields of the register form$")
     public void iCompleteAllTheFieldsOfTheRegisterForm() {
-        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-42']"));
+        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='username']"));
         username.sendKeys("drake");
 
-        WebElement email = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-43']"));
+        WebElement email = Util.getDriver().findElement(By.xpath("//input[@id='email']"));
         email.sendKeys("drake@gmail.com");
 
-        WebElement firstName = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-44']"));
+        WebElement firstName = Util.getDriver().findElement(By.xpath("//input[@id='firstName']"));
         firstName.sendKeys("drake");
 
-        WebElement lastName = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-45']"));
+        WebElement lastName = Util.getDriver().findElement(By.xpath("//input[@id='lastName']"));
         lastName.sendKeys("doe");
 
-        WebElement telephoneNumber = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-46']"));
+        WebElement telephoneNumber = Util.getDriver().findElement(By.xpath("//input[@id='telephoneNumber']"));
         telephoneNumber.sendKeys("0(69)-373-373");
 
-        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-47']"));
+        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='password']"));
         password.sendKeys("123abcABC*");
     }
 
