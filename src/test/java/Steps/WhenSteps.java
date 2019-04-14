@@ -81,4 +81,39 @@ public class WhenSteps {
                 Util.getDriver().findElement(By.xpath("//div[contains(text(),'USERS')]"));
         userTab.click();
     }
+
+    @And("^I click on the add$")
+    public void iClickOnTheAdd() {
+        WebElement addButton = Util.getDriver().
+                findElement(By.xpath("//span[contains(text(),'Add')]"));
+        addButton.click();
+    }
+
+    @And("^I complete all the fields of the add form$")
+    public void iCompleteAllTheFieldsOfTheAddForm() {
+        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='username']"));
+        username.sendKeys("coolio");
+
+        WebElement email = Util.getDriver().findElement(By.xpath("//input[@id='email']"));
+        email.sendKeys("coolio@gmail.com");
+
+        WebElement firstName = Util.getDriver().findElement(By.xpath("//input[@id='firstName']"));
+        firstName.sendKeys("coolio");
+
+        WebElement lastName = Util.getDriver().findElement(By.xpath("//input[@id='lastName']"));
+        lastName.sendKeys("gangster");
+
+        WebElement telephoneNumber = Util.getDriver().findElement(By.xpath("//input[@id='telephoneNumber']"));
+        telephoneNumber.sendKeys("0(69)-373-373");
+
+        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='password']"));
+        password.sendKeys("123abcABC*");
+    }
+
+    @And("^I click register button$")
+    public void iClickRegisterButton() {
+        WebElement registerButton = Util.getDriver().
+                findElement(By.xpath("//span[contains(text(),'Register')]"));
+        registerButton.click();
+    }
 }

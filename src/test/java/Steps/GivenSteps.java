@@ -1,5 +1,6 @@
 package Steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

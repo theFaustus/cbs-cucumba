@@ -55,4 +55,10 @@ public class ThenSteps {
         WebElement matTable = Util.getDriver().findElement(By.xpath("//mat-table[@class='mat-table']"));
         assertNotNull(matTable);
     }
+
+    @Then("^I see notification about created user$")
+    public void iSeeNotificationAboutCreatedUser() {
+        WebElement notification = Util.getDriver().findElement(By.xpath("//p[@class='notifier__notification-message ng-star-inserted']"));
+        assertNotNull(notification);
+    }
 }
