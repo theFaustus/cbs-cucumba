@@ -49,4 +49,23 @@ public class GivenSteps {
                 findElement(By.xpath("//span[contains(text(),'Sign up')]"));
         signUp.click();
     }
+
+    @Given("^I am logged in as an admin user$")
+    public void iAmLoggedInAsAnAdminUser() {
+        Util.getDriver().get("http://localhost:4200/home");
+
+        WebElement login = Util.getDriver().
+                findElement(By.xpath("//a[@id='login']"));
+        login.click();
+
+        WebElement username = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-0']"));
+        username.sendKeys("admin");
+
+        WebElement password = Util.getDriver().findElement(By.xpath("//input[@id='mat-input-1']"));
+        password.sendKeys("admin");
+
+        WebElement loginButton =
+                Util.getDriver().findElement(By.xpath("//button[@class='mat-raised-button mat-primary _mat-animation-noopable']"));
+        loginButton.click();
+    }
 }

@@ -67,4 +67,18 @@ public class WhenSteps {
                 Util.getDriver().findElement(By.xpath("//span[contains(text(),'Register')]"));
         signUp.click();
     }
+
+    @When("^I click on the dashboard$")
+    public void iClickOnTheDashboard() {
+        WebElement dashboard =
+                Util.getDriver().findElement(By.xpath("//span[contains(text(),'Dashboard')]"));
+        dashboard.click();
+    }
+
+    @And("^I click on the users tab$")
+    public void iClickOnTheUsersTab() {
+        WebElement userTab =
+                Util.getDriver().findElement(By.xpath("//div[contains(text(),'USERS')]"));
+        userTab.click();
+    }
 }

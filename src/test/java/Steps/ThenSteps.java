@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 
 
 public class ThenSteps {
@@ -47,5 +48,11 @@ public class ThenSteps {
         String registeredText = registeredMessage.getText();
 
         assertEquals("Your registration is successful. Please login!", registeredText);
+    }
+
+    @Then("^I see users tab$")
+    public void iSeeUsersTab() {
+        WebElement matTable = Util.getDriver().findElement(By.xpath("//mat-table[@class='mat-table']"));
+        assertNotNull(matTable);
     }
 }
