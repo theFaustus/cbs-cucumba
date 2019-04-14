@@ -61,4 +61,10 @@ public class ThenSteps {
         WebElement notification = Util.getDriver().findElement(By.xpath("//p[@class='notifier__notification-message ng-star-inserted']"));
         assertNotNull(notification);
     }
+
+    @Then("^I see notification about deleted user$")
+    public void iSeeNotificationAboutDeletedUser() {
+        WebElement notification = Util.getDriver().findElement(By.xpath("//p[@class='notifier__notification-message ng-star-inserted']"));
+        assertNotNull(notification);
+    }
 }

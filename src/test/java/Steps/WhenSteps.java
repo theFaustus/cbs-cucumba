@@ -116,4 +116,11 @@ public class WhenSteps {
                 findElement(By.xpath("//span[contains(text(),'Register')]"));
         registerButton.click();
     }
+
+    @And("^I click on the delete$")
+    public void iClickOnTheDelete() {
+        WebElement deleteButton = Util.getDriver().
+                findElement(By.xpath("//button[@id='delete-1280']"));
+        deleteButton.click();
+    }
 }
